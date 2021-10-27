@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos de eventos HTML - Javascript</title>
+</head>
+<body>
+  <style>
+    div:not(.modal, .modal-content) {
+      margin: 20px;
+      padding: 10px;
+      background-color: azure;
+    }
+    .modal {
+      display: none;
+      z-index: 99;
+      position: absolute;
+      top: 0px;
+      left:0px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .modal-content {
+      margin-top: 150px;
+      margin-left: 250px;
+      width: 350px;
+      height: 350px;
+      background-color: white;
+    }
+    .fecha-menu {
+      position: relative;
+      top: 10px;
+      left: 50px;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    .fecha-menu:hover{
+      color: paleturquoise;
+    }
+  </style>
+  <header>
+    <h1>Exemplos de utilização de eventos com Javascript</h1>
+    <p>Vamos a alguns exemplos. Página com eventos possíveis no
+      javascript disponível em 
+      <a href="https://www.w3schools.com/jsref/dom_obj_event.asp"
+       target="_blank">
+       https://www.w3schools.com/jsref/dom_obj_event.asp</a>.
+    </p>
+    <p>Alguns exemplos:</p>
+    <ul>
+      <li><a href="#clicaveis">Evento Click</a></li>
+      <li><a href="#evento-focus">Evento Focus e Blur</a></li>
+      <li><a href="#modal-exemplo">Exemplo de Modal</a></li>
+    </ul>
+  </header>
+  <section id="clicaveis">
+    <div>
+      <span>Aqui iremos demonstrar o click do botão.</span>
+      <button class="clicaveis">Clique-me</button>
+    </div>
+    <div>
+      <span>Aqui iremos demonstrar o click em uma imagem.</span>
+      <img class="clicaveis" src="imagens/click-here.png" alt="" 
+      style="width: 200px;">
+    </div>
+    <div>
+      <span>Aqui iremos demonstrar o click em uma parte de texto.</span>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing
+         elit. Distinctio modi quae non dignissimos in minima
+         <b><span class="clicaveis">--> Clique aqui <--</span></b>
+        similique, inventore aliquid, molestias consectetur 
+        dolor id possimus beatae quaerat, assumenda temporibus 
+        quos unde hic.</p>
+    </div>
+    <div>
+      <h3>MUITO CUIDADO! Bubbling!</h3>
+      <span>Aqui iremos utilizar o click em mais de um elemento.</span>
+      <div class="clicaveis">
+        <button class="clicaveis">Clique aqui!</button>
+      </div>
+    </div>
+  </section>
+  <section id="evento-focus">
+    <h1>Exemplos de uso do evento focus.</h1>
+    <div>
+      <span>Colocando o disparo do evento em um elemento input.</span>
+      <input class="focus-habilitado" type="text">
+    </div>
+    <div>
+      <span>Colocando o disparo do evento em um elemento Button.</span>
+      <button class="focus-habilitado">Recebi o focus</button>
+    </div>
+    <div>
+      <span>Colocando o disparo do evento em um elemento Img.</span>
+      <img class="focus-habilitado" src="imagens/click-here.png" alt="" 
+      style="width: 200px;" tabindex="0">
+    </div>
+    <div>
+      <span>Colocando o disparo do evento em um elemento span.</span>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing
+         elit. Distinctio modi quae non dignissimos in minima
+         <b><span class="focus-habilitado" tabindex="1">--> Clique aqui <--</span></b>
+        similique, inventore aliquid, molestias consectetur 
+        dolor id possimus beatae quaerat, assumenda temporibus 
+        quos unde hic.</p>
+    </div>
+    <div>
+      <h3>Aqui não ocorre Bubbling!</h3>
+      <span>Aqui iremos utilizar o click em mais de um elemento.</span>
+      <div class="focus-habilitado" tabindex="3">
+        <button class="focus-habilitado">Clique aqui!</button>
+      </div>
+    </div>
+  </section>
+  <section id="modal-exemplo">
+    <div>
+      <h3>Nesse exemplo vou demonstrar o uso de um modal</h3>
+      <button class="click-modal">Clique aqui para modal!</button>
+    </div>
+  </section>
+  <div class="modal">
+    <span class="fecha-menu">X</span>
+    <div class="modal-content">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2xEhJi44--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/bked2kyupon5jmkwx4k6.gif" alt="">
+    </div>
+  </div>
+
+  <div>
+    <h3>Usando fadein e fadeout</h3>
+    <button id="fadein">Fade-out</button>
+    <button id="fadeout">Fade-in</button>
+    <p id="fadeele">
+      Lorem ipsum dolor sit amet consectetur 
+      adipisicing elit. Ratione sed numquam,
+       ullam sint doloremque provident facilis 
+       commodi, fugiat, dolor ducimus 
+       blanditiis quisquam unde ab odit voluptates ea! 
+       Quidem, officia reprehenderit.
+    </p>
+    <div>
+      <h4>Oi, subi!</h4>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="javascript/evento.js"></script>
+</body>
+</html>

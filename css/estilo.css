@@ -1,0 +1,195 @@
+/* Aplicando a fonte para todos os itens */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Mobile First */
+/* Ajustes pelas tags HTML */
+header {
+  margin: 10px;
+  /* O ajuste do tamanho do header foi só para tirar a 
+    barra de rolagem inferior */  
+  width: 98%;
+}
+footer {
+  background-color: rgba(60, 209, 219, 0.3);
+  margin: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-areas: 
+    "enderecos telefones"
+    "emails midias-sociais";
+}
+#menu-slide {
+  z-index: 10;
+  position: absolute;
+  top: 95px;
+  left: -200px;
+  width: 200px;
+  height: 400px;
+  background-color: snow;
+  border: 1px silver solid;
+  transition: 0.5s ease-in;
+}
+#banner, #novidade {
+  background-color: #3CD1DB;
+  padding: 10px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 25px;
+  margin: 10px;
+}
+#banner img, #novidade img {
+  width: 100%;
+  height: 100%;
+}
+#banner div, #novidade div {
+  margin-top: 20px;
+  width: 100%;
+}
+#nav-desktop {
+  display: none;
+}
+#menu-mobile {
+  display: block;
+  float: right;
+  margin-top: 20px;
+}
+#img-rodape, #menu-rodape {
+  display: none;
+}
+/* Ajustes pelos Ids do HTML */
+#nav-desktop ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#nav-desktop ul li {
+  margin-right: 10px;
+  font-weight: bold;
+}
+#menu-rodape ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+#midias-sociais img {
+  height: 40px;
+}
+#galeria {
+  margin: 10px;
+}
+.enderecos {
+  grid-area: enderecos;
+}
+.emails {
+  grid-area: emails;
+}
+.telefones {
+  grid-area: telefones;
+}
+.midias-sociais {
+  grid-area: midias-sociais;
+}
+/* Ajustes pelas classes criadas no CSS */
+/* Minhas classes CSS */
+.img-logo {
+  width: 100px;
+}
+.texto-centralizado {
+  text-align: center;
+}
+.grupo-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  justify-content: center;
+}
+.senai-card {
+  width: 250px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.senai-card img {
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}
+.senai-card div {
+  padding: 10px;
+}
+/* Ajustes do bootstrap */
+.carousel-caption {
+  background-color: rgba(211, 211, 211, 0.7);
+  border-radius: 10px;
+}
+.carousel-indicators [data-bs-target] {
+  border-radius: 100%;
+  height: 3vw;
+  width: 3vw;
+  margin-left: 1.5vw;
+}
+.carousel-indicators {
+  background-color: rgba(211, 211, 211, 0.7);
+  border-radius: 10px;
+}
+
+.carousel-item {
+  height: 40vw;
+}
+.carousel-item img {
+  height: 100%;
+}
+#menu-slide.slide-menu-show {
+  left: 0px;
+}
+/* Ajuste para responsividade */
+@media screen and (min-width: 768px) {
+  footer {
+    grid-template-areas: 
+      "logotipo emails midias-sociais"
+      "logotipo enderecos menu-rodape"
+      "logotipo telefones menu-rodape";
+  }
+  #img-rodape, #menu-rodape {
+    display: block;
+  }
+  #img-rodape {
+    grid-area: logotipo;
+  }
+  #menu-rodape {
+    grid-area: menu-rodape;
+  }
+  #banner, #novidade {
+    padding: 20px;
+    column-gap: 50px;
+  }
+  #banner img, #novidade img {
+    width: 30vw;
+    height: 100%;
+  }
+  #banner div, #novidade div {
+    margin-top: 20px;
+    width: 50vw;
+  }
+   #nav-desktop {
+    display: block;
+    margin-top: 30px;
+    float: right;
+  }
+  #menu-mobile {
+    display: none;
+  }  
+  .carousel-indicators [data-bs-target] {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px
+  }
+  .carousel-indicators {
+    background-color: transparent;
+    border-radius: 0px;
+  }
+  
+}
